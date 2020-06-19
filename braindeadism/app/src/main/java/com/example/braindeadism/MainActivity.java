@@ -44,35 +44,40 @@ public class MainActivity extends AppCompatActivity implements ApiListener {
         this.button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (state.equals(States.QUOTES)){
-                    state = States.DOGS;
-                } else {
-                    state = States.QUOTES;
+                if (state.equals(States.CATS)){
+                    state = States.CATS;
+                    setUpState();
                 }
-                setUpState();
             }
         });
 
         this.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (state.equals(States.CATS)){
+                if (state.equals(States.DOGS)){
                     state = States.DOGS;
-                } else {
-                    state = States.CATS;
+                    setUpState();
                 }
-                setUpState();
             }
         });
     }
 
     private void setUpState() {
+        content = new ArrayList<>();
+        imageAdapter = new ImageAdapter(this, content);
+        itemListRV.setAdapter(imageAdapter);
+        if (state.equals(States.CATS)){
+            catApiManager = new CatApiManager(this, this);
+        } else {
+            dogApiManager = new DogApiManager(this, this);
+        }
 
     }
 
     @Override
     public void onPhotoAvailable(String url) {
-
+        content.add(url);
+        imageAdapter.notifyDataSetChanged();
     }
 
     @Override
