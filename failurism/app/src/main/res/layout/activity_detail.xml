@@ -5,11 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/detailbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorWhite">
+        android:background="@color/colorPrimary">
 
         <TextView
             android:id="@+id/app_nameTV"
@@ -20,35 +20,24 @@
             android:paddingBottom="10dp"
             android:layout_marginLeft="8dp"
             android:text="@string/app_name"
-            android:textSize="28sp"
-            android:textColor="@color/colorPrimary"
+            android:textSize="36sp"
+            android:textColor="@color/colorWhite"
             />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/toggle_mode"
+            android:id="@+id/save_item"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:fabCustomSize="42dp"
             android:layout_marginRight="18dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:backgroundTint="@color/colorPrimary"
+            app:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_baseline_save_24"
             android:layout_marginEnd="18dp"
-            android:onClick="toSave"/>
-
+            android:onClick="toSave"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <View
-        android:id="@+id/separation"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/colorPrimaryDark"
-        app:layout_constraintTop_toBottomOf="@id/detailbar"
-        />
 
     <ImageView
         android:id="@+id/detailIV"
@@ -57,7 +46,7 @@
         android:scaleType="fitCenter"
         android:background="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/separation"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />

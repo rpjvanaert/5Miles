@@ -26,33 +26,21 @@
             android:textSize="36sp"
             android:textColor="@color/colorWhite"
             />
-        
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/toggle_mode"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:fabCustomSize="52dp"
             android:layout_marginRight="18dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
             app:backgroundTint="@color/colorPrimary"
             android:src="@drawable/ic_baseline_list_24"
             android:layout_marginEnd="18dp"
-            android:onClick="toQuotes"/>
-
+            android:onClick="toQuotes"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    <View-->
-<!--        android:id="@+id/separation"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="8dp"-->
-<!--        android:background="@color/colorPrimaryDark"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/toolbar"/>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/image_list"
