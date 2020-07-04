@@ -50,7 +50,7 @@ public class ApiImageAdapter extends RecyclerView.Adapter<ApiImageAdapter.ImageV
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d(LOGTAG, "onCreateViewHolder() called");
+//        Log.d(LOGTAG, "onCreateViewHolder() called");
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.image_item, parent, false);
         ImageViewHolder viewHolder = new ImageViewHolder(itemView);
         return viewHolder;
@@ -58,7 +58,7 @@ public class ApiImageAdapter extends RecyclerView.Adapter<ApiImageAdapter.ImageV
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-        Log.d(LOGTAG, "onBindViewHolder() called for item " + position);
+//        Log.d(LOGTAG, "onBindViewHolder() called for item " + position);
         ApiImage image = imageList.get(position);
         Glide.with(appContext).load(image.getUrl()).into(holder.imageView);
     }
