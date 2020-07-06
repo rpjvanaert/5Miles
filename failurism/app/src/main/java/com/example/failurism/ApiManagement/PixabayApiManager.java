@@ -15,6 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Random;
+
 public class PixabayApiManager {
     private static final String LOGTAG = CatApiManager.class.getName();
 
@@ -29,7 +31,14 @@ public class PixabayApiManager {
     }
 
     public void getImages(){
-        final String url = "https://pixabay.com/api/?key=2766011-3e8868270ec4b407ae9004d5c&safesearch=true&per_page=50&order=latest&editors_choice=true";
+        Random rng = new Random();
+        String pageNumber = "" + (rng.nextInt(10) + 1);
+        String order = "popular";
+        String editorsChoice = "" + rng.nextBoolean();
+        if (rng.nextBoolean()){
+            order = "latest";
+        }
+        final String url = "https://pixabay.com/api/?key=2766011-3e8868270ec4b407ae9004d5c&safesearch=true&per_page=50&order=" + order + "&editors_choice=" + editorsChoice + "&page=" + pageNumber;
 
         final JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,

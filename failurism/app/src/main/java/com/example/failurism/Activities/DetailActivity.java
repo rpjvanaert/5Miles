@@ -95,7 +95,7 @@ public class DetailActivity extends AppCompatActivity {
 
                     try{
                         fos = new FileOutputStream(myImageFile);
-                        Glide.with(DetailActivity.this).asBitmap().load(detailImage.getUrl()).into(new CustomTarget<Bitmap>() {
+                        Glide.with(DetailActivity.this).asBitmap().load(detailImage.getLargeURL()).into(new CustomTarget<Bitmap>() {
                             @Override
                             public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
                                 bitmap = resource;

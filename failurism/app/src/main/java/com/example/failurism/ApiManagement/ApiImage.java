@@ -18,7 +18,10 @@ public class ApiImage implements Serializable {
     }
 
     public String getUrl(){
-        System.out.println(this.largeURL == null);
+        return this.url;
+    }
+
+    public String getLargeURL(){
         if (this.largeURL == null){
             return this.url;
         } else {
