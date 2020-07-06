@@ -63,9 +63,7 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    Bitmap bitmap;
-
-    public void toSave(View view){
+    public void saveImage(){
         final ProgressDialog progress = new ProgressDialog(DetailActivity.this);
         class SaveThisImage extends AsyncTask<Void, Void, Void>{
 
@@ -135,5 +133,16 @@ public class DetailActivity extends AppCompatActivity {
         }
         SaveThisImage shareImg = new SaveThisImage();
         shareImg.execute();
+    }
+
+    public void toSave(View view){
+        if (Build.VERSION.SDK_INT >= 23){
+            int permissionCheck = ContextCompat.checkSelfPermission(DetailActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED){
+                ActivityCompat.requestPermissions(DetailActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            } else {
+                saveImage();
+            }
+        }
     }
 }
