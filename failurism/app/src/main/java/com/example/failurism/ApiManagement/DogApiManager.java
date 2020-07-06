@@ -47,7 +47,7 @@ public class DogApiManager {
                                 String url = urlArray.getString(i);
 
                                 Log.d(LOGTAG, "Adding url: " + url);
-                                listener.onPhotoAvailable(new ApiImage(url));
+                                listener.onPhotoAvailable(new ApiImage(url, Api.DOG));
                             }
                         } catch (JSONException e) {
                             // On JSONException, create log message.

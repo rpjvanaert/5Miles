@@ -46,7 +46,7 @@ public class CatApiManager {
                                 String url = catObject.getString("url");
 
                                 Log.d(LOGTAG, "Adding url: " + url);
-                                listener.onPhotoAvailable(new ApiImage(url));
+                                listener.onPhotoAvailable(new ApiImage(url, Api.CAT));
                             }
                         } catch (JSONException e) {
                             // On JSONException, create log message.
