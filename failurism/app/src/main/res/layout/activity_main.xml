@@ -42,29 +42,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/image_list"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorWhite"
+        android:id="@+id/swipeToRefresh"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        />
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/image_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/reload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:fabCustomSize="64dp"
-        android:layout_margin="4dp"
-        app:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_baseline_autorenew_24"
-        android:onClick="toReload"
-        />
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/toggle_api"
@@ -73,7 +68,7 @@
         app:fabCustomSize="64dp"
         android:layout_margin="4dp"
         android:src="@drawable/ic_baseline_compare_arrows_24"
-        app:layout_constraintBottom_toTopOf="@id/reload"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:backgroundTint="@color/colorPrimary"
         android:onClick="toToggle"/>

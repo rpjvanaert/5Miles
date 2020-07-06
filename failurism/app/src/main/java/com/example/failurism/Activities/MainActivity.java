@@ -2,6 +2,7 @@ package com.example.failurism.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import com.example.failurism.ApiManagement.ApiImage;
 import com.example.failurism.ApiManagement.ApiListener;
 import com.example.failurism.ApiManagement.CatApiManager;
 import com.example.failurism.ApiManagement.DogApiManager;
+import com.example.failurism.ApiManagement.PixabayApiManager;
 import com.example.failurism.GridAutofitLayoutManager;
 import com.example.failurism.ApiManagement.ApiImageAdapter;
 import com.example.failurism.R;
@@ -24,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
     private RecyclerView imageListRV;
     private ArrayList<ApiImage> images;
     private ApiImageAdapter imageAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
     CatApiManager catApiManager;
     DogApiManager dogApiManager;
+    PixabayApiManager pixabayApiManager;
     Api chosenApi;
 
     @Override
@@ -43,6 +47,16 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
         chosenApi = Api.CAT;
         catApiManager = new CatApiManager(this, this);
         catApiManager.getImages();
+
+        this.swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeToRefresh);
+        this.swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
+        this.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                reloadList();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     @Override
@@ -69,8 +83,10 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
                 chosenApi = Api.DOG;
                 break;
             case DOG:
-                chosenApi = Api.CAT;
+                chosenApi = Api.PIXABAY;
                 break;
+            case PIXABAY:
+                chosenApi = Api.CAT;
         }
         reloadList();
     }
@@ -78,10 +94,6 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
     public void toQuotes(View view){
         Intent intent = new Intent(this, QuoteActivity.class);
         startActivity(intent);
-    }
-
-    public void toReload(View view){
-        reloadList();
     }
 
     private void reloadList(){
@@ -97,6 +109,9 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
                 dogApiManager = new DogApiManager(this, this);
                 dogApiManager.getImages();
                 break;
+            case PIXABAY:
+                pixabayApiManager = new PixabayApiManager(this, this);
+                pixabayApiManager.getImages();
         }
         imageAdapter.notifyDataSetChanged();
     }
