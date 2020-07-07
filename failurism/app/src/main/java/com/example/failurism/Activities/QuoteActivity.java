@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -119,14 +121,14 @@ public class QuoteActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    @Override
-//    public void onQuoteAvailable(String quote) {
-//        quotes.add(quote);
-//        quoteAdapter.notifyDataSetChanged();
-//    }
-//
-//    @Override
-//    public void onQuoteError(Error error) {
-//
-//    }
+    public void toTop(View view){
+        quoteListRV.getLayoutManager().smoothScrollToPosition(quoteListRV, new RecyclerView.State(), 0);
+    }
+
+
+    public void toHelp(View view) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        DialogFragment fragment = new MainDialogFragment();
+        fragment.show(ft, "Dialog");
+    }
 }
