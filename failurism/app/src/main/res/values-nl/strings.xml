@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="confirm">Bevestigen</string>
+    <string name="dialog_main_title">Welkom bij 5Miles :)</string>
+    <string name="dialog_main_help">
+        Er zijn verschillende API\'s op deze app. Je kan door ze heen gaan door op de pijl rechts onderin te klikken.
+        \n\n
+        Je kan op elke item klikken om het beter te bekijken en zelfs op te slaan!(GIF\'s alleen eerste frame opgeslagen).
+        \n\n
+        De lijst icoon rechts bovenin brengt je naar de quotes tab en weer terug!
+        \n\n\n
+        Veel plezier!
+    </string>
+    <string name="details_title">Details Afbeelding</string>
+    <string name="link_opener">"URL-link:\n"</string>
+    <string name="copy">Kopieer</string>
+    <string name="clip_label">Link Detail Afbeeling</string>
+    <string name="link_copied_toast">Link gekopieerd!</string>
+</resources>

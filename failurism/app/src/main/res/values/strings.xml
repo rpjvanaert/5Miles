@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">5Miles :)</string>
+    <string name="app_name" translatable="false">5Miles :)</string>
+    <string name="confirm">Confirm</string>
+    <string name="dialog_main_title">Welcome to 5Miles :)!</string>
+    <string name="dialog_main_help">
+        There are a series of API\'s in this app, you can go through them with the next arrow on the bottom right corner.
+        \n\n
+        You can click on any item and save it!(GIF\'s first frame will be saved as jpeg file)
+        \n\n
+        The list icon in the top right, gets you to the quotes tab and will get you back!
+        \n\n\n
+        Have fun!
+    </string>
+    <string name="details_title">Details Image</string>
+    <string name="link_opener">"URL-link:\n"</string>
+    <string name="copy">Copy</string>
+    <string name="clip_label">Link Detail Image</string>
+    <string name="link_copied_toast">Link copied!</string>
 </resources>
