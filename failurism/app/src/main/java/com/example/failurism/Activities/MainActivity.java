@@ -1,6 +1,8 @@
 package com.example.failurism.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -115,4 +117,7 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
         }
         imageAdapter.notifyDataSetChanged();
     }
-}
+
+    public void toTop(View view) {
+        imageListRV.getLayoutManager().smoothScrollToPosition(imageListRV, new RecyclerView.State(), 0);
+    }
