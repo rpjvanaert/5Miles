@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
         imageListRV = findViewById(R.id.image_list);
         imageAdapter = new ApiImageAdapter(this, images, this);
         imageListRV.setAdapter(imageAdapter);
-        imageListRV.setLayoutManager(new GridAutofitLayoutManager(this, 400));
+        imageListRV.setLayoutManager(new GridAutofitLayoutManager(this, 600));
 
         chosenApi = Api.CAT;
         catApiManager = new CatApiManager(this, this);
@@ -121,3 +121,10 @@ public class MainActivity extends AppCompatActivity implements ApiListener, OnIt
     public void toTop(View view) {
         imageListRV.getLayoutManager().smoothScrollToPosition(imageListRV, new RecyclerView.State(), 0);
     }
+
+    public void toHelp(View view) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        DialogFragment fragment = new MainDialogFragment();
+        fragment.show(ft, "Dialog");
+    }
+}
