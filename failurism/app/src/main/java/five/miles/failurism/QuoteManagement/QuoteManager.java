@@ -1,7 +1,6 @@
-package com.example.failurism.ApiManagement;
+package five.miles.failurism.QuoteManagement;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,44 +13,40 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class DogApiManager {
-    private static final String LOGTAG = CatApiManager.class.getName();
+public class QuoteManager {
+    private static final String LOGTAG = QuoteManager.class.getName();
 
     private Context appContext;
     private RequestQueue queue;
-    private ApiListener listener;
+    private QuoteListener listener;
 
-    public DogApiManager(Context context, ApiListener listener){
-        this.appContext = context;
+    public QuoteManager(Context context, QuoteListener listener){
         this.listener = listener;
+        this.appContext = context;
         this.queue = Volley.newRequestQueue(this.appContext);
     }
 
-    public void getImages(){
-        final String url = "https://dog.ceo/api/breeds/image/random/50";
+    public void getQuotes(){
+        final String path = "https://www.dropbox.com/s/xq8svbjmfiauc2e/Quotes.json?dl=0";
 
         final JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET,
-                url,
+                path,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.d(LOGTAG, "Volley response: " + response.toString());
-                        Log.d(LOGTAG, "Response length: " + response.length());
                         try {
+                            JSONArray jsonArray = response.getJSONArray("quotes");
 
-                            JSONArray urlArray = response.getJSONArray("message");
                             //For each image, reading the object and getting image url and other information
-                            for (int i = 0; i < urlArray.length(); ++i) {
-                                String url = urlArray.getString(i);
+                            for (int i = 0; i < jsonArray.length(); ++i) {
+                                String quote = jsonArray.getString(i);
 
-                                Log.d(LOGTAG, "Adding url: " + url);
-                                listener.onPhotoAvailable(new ApiImage(url, Api.DOG));
+                                listener.onQuoteAvailable(quote);
                             }
                         } catch (JSONException e) {
                             // On JSONException, create log message.
-                            Log.e(LOGTAG, "Error while parsing JSON data: " + e.getLocalizedMessage());
                         }
                     }
                 },
@@ -63,12 +58,10 @@ public class DogApiManager {
                      */
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e(LOGTAG, error.getLocalizedMessage());
-                        listener.onPhotoError(new Error(error.getLocalizedMessage()));
+                        listener.onQuoteError(new Error(error.getLocalizedMessage()));
                     }
                 }
         );
-        // Request done, add it in queue.
         this.queue.add(request);
     }
 }

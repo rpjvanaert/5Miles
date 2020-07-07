@@ -1,4 +1,4 @@
-package com.example.failurism.Activities;
+package five.miles.failurism.Activities;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -28,8 +28,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.example.failurism.ApiManagement.ApiImage;
-import com.example.failurism.R;
+import five.miles.failurism.ApiManagement.ApiImage;
+import com.miles.failurism.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;

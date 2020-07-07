@@ -1,13 +1,12 @@
-package com.example.failurism.Activities;
+package five.miles.failurism.Activities;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.fragment.app.DialogFragment;
 
-import com.example.failurism.R;
+import com.miles.failurism.R;
 
 public class MainDialogFragment extends DialogFragment {
 

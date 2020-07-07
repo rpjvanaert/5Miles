@@ -1,4 +1,4 @@
-package com.example.failurism.Activities;
+package five.miles.failurism.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -11,15 +11,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.example.failurism.ApiManagement.Api;
-import com.example.failurism.ApiManagement.ApiImage;
-import com.example.failurism.ApiManagement.ApiListener;
-import com.example.failurism.ApiManagement.CatApiManager;
-import com.example.failurism.ApiManagement.DogApiManager;
-import com.example.failurism.ApiManagement.PixabayApiManager;
-import com.example.failurism.GridAutofitLayoutManager;
-import com.example.failurism.ApiManagement.ApiImageAdapter;
-import com.example.failurism.R;
+import five.miles.failurism.ApiManagement.Api;
+import five.miles.failurism.ApiManagement.ApiImage;
+import five.miles.failurism.ApiManagement.ApiListener;
+import five.miles.failurism.ApiManagement.CatApiManager;
+import five.miles.failurism.ApiManagement.DogApiManager;
+import five.miles.failurism.ApiManagement.PixabayApiManager;
+import five.miles.failurism.GridAutofitLayoutManager;
+import five.miles.failurism.ApiManagement.ApiImageAdapter;
+import com.miles.failurism.R;
 
 import java.util.ArrayList;
 

@@ -1,6 +1,4 @@
-package com.example.failurism.QuoteManagement;
-
-import com.example.failurism.ApiManagement.ApiImage;
+package five.miles.failurism.QuoteManagement;
 
 public interface QuoteListener {
     void onQuoteAvailable(String quote);

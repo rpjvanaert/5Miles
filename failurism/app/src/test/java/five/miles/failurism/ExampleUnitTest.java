@@ -1,4 +1,4 @@
-package com.example.failurism;
+package five.miles.failurism;
 
 import org.junit.Test;
 

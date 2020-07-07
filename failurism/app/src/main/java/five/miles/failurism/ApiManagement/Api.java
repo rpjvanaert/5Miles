@@ -1,4 +1,4 @@
-package com.example.failurism.ApiManagement;
+package five.miles.failurism.ApiManagement;
 
 public enum Api {
     CAT,

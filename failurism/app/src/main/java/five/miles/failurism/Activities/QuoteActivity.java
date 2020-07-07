@@ -1,34 +1,21 @@
-package com.example.failurism.Activities;
+package five.miles.failurism.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.failurism.QuoteManagement.QuoteAdapter;
-import com.example.failurism.QuoteManagement.QuoteListener;
-import com.example.failurism.QuoteManagement.QuoteManager;
-import com.example.failurism.R;
+import five.miles.failurism.QuoteManagement.QuoteAdapter;
+import five.miles.failurism.QuoteManagement.QuoteManager;
+import com.miles.failurism.R;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 public class QuoteActivity extends AppCompatActivity {
 

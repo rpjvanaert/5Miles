@@ -1,7 +1,6 @@
-package com.example.failurism.ApiManagement;
+package five.miles.failurism.ApiManagement;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.failurism.Activities.OnItemClickListener;
-import com.example.failurism.R;
+import five.miles.failurism.Activities.OnItemClickListener;
+import com.miles.failurism.R;
 
 import java.util.List;
 

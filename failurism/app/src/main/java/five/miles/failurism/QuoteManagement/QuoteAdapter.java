@@ -1,4 +1,4 @@
-package com.example.failurism.QuoteManagement;
+package five.miles.failurism.QuoteManagement;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.failurism.R;
+import com.miles.failurism.R;
 
 import java.util.List;
 
