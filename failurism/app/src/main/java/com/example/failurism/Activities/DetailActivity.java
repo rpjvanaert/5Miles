@@ -22,6 +22,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
@@ -144,5 +146,11 @@ public class DetailActivity extends AppCompatActivity {
                 saveImage();
             }
         }
+    }
+
+    public void toLinkShow(View view) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        DialogFragment fragment = new LinkDialogFragment(detailImage.getLargeURL());
+        fragment.show(ft, "Dialog");
     }
 }
