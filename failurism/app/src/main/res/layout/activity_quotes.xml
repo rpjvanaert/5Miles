@@ -18,7 +18,7 @@
             android:id="@+id/app_nameTV"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:layout_constraintLeft_toRightOf="@id/infoBtn"
+            app:layout_constraintLeft_toLeftOf="parent"
             android:paddingTop="4dp"
             android:paddingBottom="10dp"
             android:layout_marginLeft="8dp"
@@ -55,7 +55,7 @@
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/infoBtn"
+        android:id="@+id/info_button_quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:fabCustomSize="32dp"
