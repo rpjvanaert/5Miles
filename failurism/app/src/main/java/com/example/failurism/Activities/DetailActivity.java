@@ -70,7 +70,10 @@ public class DetailActivity extends AppCompatActivity {
 
         try {
             InputStream in = new URL(file).openStream();
-            FileOutputStream fos = getApplicationContext().openFileOutput(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + R.string.app_name + "/" + "fiveMiles_" + fileName + fileExtension, Context.MODE_PRIVATE);
+//            String filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + R.string.app_name + "/" + "fiveMiles_" + fileName + fileExtension;
+            String filePath = fileName + fileExtension;
+            Log.d("File", filePath);
+            FileOutputStream fos = getApplicationContext().openFileOutput(filePath, Context.MODE_PRIVATE);
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             byte[] data = new byte[file.length()];
             int nRead;
