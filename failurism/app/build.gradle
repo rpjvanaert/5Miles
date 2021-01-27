@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.failurism"
+        applicationId "five.miles.failurism"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -40,4 +40,5 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.android.support:appcompat-v7:23.1.0'
     implementation 'com.android.support:design:23.0.1'
+    implementation 'com.android.support:support-v4:25.3.1'
 }
