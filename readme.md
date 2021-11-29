@@ -1,4 +1,4 @@
-# Charge Management
+# TaskHop
 An in development app by Ralf van Aert about how to spend your charge! Easily make and remove tasks in this app.
 
 ## Development update
